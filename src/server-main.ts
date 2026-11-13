@@ -34,4 +34,4 @@ const server = createServer(async (req, res) => {
 });
 
 const port = Number(process.env["PORT"] ?? 8787);
-server.listen(port, "127.0.0.1", () => console.log(`compliance-forge on http://127.0.0.1:${port}  (local only, nothing is uploaded)`));
+server.listen(port, "127.0.0.1", () => console.log(`compliance-workbench on http://127.0.0.1:${port}  (local only, nothing is uploaded)`));

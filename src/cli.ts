@@ -8,7 +8,7 @@ import { roi, validateModel } from "./roi.js";
 import { gate } from "./nis2gate.js";
 import { doraMarkdown, ensMarkdown, rfpMarkdown, roiMarkdown } from "./reports.js";
 
-const USAGE = `compliance-forge <command> FILE [options]
+const USAGE = `compliance-workbench <command> FILE [options]
 
   rfp   FILE.txt   [--have capabilities.json] [--fail-on-mandatory-gap]   shred an RFP into mapped requirements
   dora  FILE.csv   [--today YYYY-MM-DD]                                    check a register of ICT contracts (exit 1 on high findings)

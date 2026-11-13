@@ -1,6 +1,6 @@
-# compliance-forge
+# compliance-workbench
 
-[![ci](https://github.com/jvch0512/compliance-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/jvch0512/compliance-forge/actions/workflows/ci.yml)
+[![ci](https://github.com/jvch0512/compliance-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/jvch0512/compliance-workbench/actions/workflows/ci.yml)
 
 The paperwork around a security deal, turned into tools. Paste an RFP and get every security requirement mapped to NIS2, ISO 27001:2022 and ENS with your coverage and gaps. Feed a DORA contract register and see which contracts miss which Article 30 clause. Work out which ENS category a system is in and what to do first. Put a euro range and a payback on a security investment. Gate a pipeline on NIS2 readiness. English and Spanish, zero runtime dependencies, nothing uploaded.
 
@@ -35,7 +35,7 @@ Every command takes `--lang en|es` and `--json`. Exit codes: `dora` exits 1 on h
 **NIS2 gate and GitHub Action.** Reuses the scoping engine from [discovery-copilot](https://github.com/jvch0512/discovery-copilot) (vendored in `src/nis2/`). Fails the job when an essential or important entity has more Article 21(2) measures with no implementation than you allow. Writes a summary to the job page.
 
 ```yaml
-- uses: jvch0512/compliance-forge@main
+- uses: jvch0512/compliance-workbench@main
   with:
     profile: compliance/nis2-profile.json
     max-none: "0"
