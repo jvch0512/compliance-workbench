@@ -1,0 +1,24 @@
+PLIEGO DE PRESCRIPCIONES TÉCNICAS: SERVICIO DE GESTIÓN DE SISTEMAS Y SEGURIDAD (EXTRACTO FICTICIO)
+
+3. Requisitos de seguridad
+3.1. El adjudicatario deberá estar en posesión de la certificación ISO/IEC 27001 en vigor para el alcance del servicio.
+3.2. El adjudicatario deberá acreditar la conformidad con el Esquema Nacional de Seguridad en categoría media para los sistemas que den soporte al servicio.
+3.3. Todos los accesos de administración deberán protegerse con autenticación multifactor.
+3.4. Se aplicará el principio de mínimo privilegio y el control de acceso basado en roles a todos los usuarios del servicio.
+3.5. La información de la entidad deberá cifrarse en tránsito mediante TLS 1.2 o superior y en reposo con AES-256.
+3.6. El adjudicatario realizará copias de seguridad diarias y deberá probar la restauración al menos una vez al trimestre.
+3.7. El adjudicatario dispondrá de un plan de continuidad de negocio y recuperación ante desastres con un RTO máximo de 4 horas.
+3.8. El adjudicatario deberá notificar cualquier incidente de seguridad que afecte a la entidad en un máximo de 24 horas.
+3.9. Se valorará disponer de un SOC 24x7 con SIEM propio y retención de registros de actividad durante 12 meses.
+3.10. El adjudicatario deberá gestionar las vulnerabilidades críticas aplicando los parches en un máximo de 15 días.
+3.11. Se valorará que el adjudicatario realice pruebas de penetración anuales realizadas por un tercero independiente.
+3.12. Los subcontratistas deberán cumplir los mismos requisitos de seguridad y el adjudicatario deberá informar de cualquier subcontratación a la entidad.
+3.13. El personal del adjudicatario deberá firmar un acuerdo de confidencialidad y recibir formación de concienciación en seguridad cada año.
+3.14. Los datos deberán tratarse exclusivamente en el Espacio Económico Europeo conforme al RGPD y la LOPDGDD.
+3.15. El adjudicatario deberá cumplir los requisitos de la Directiva NIS2 que le sean aplicables como proveedor de servicios gestionados.
+3.16. El centro de datos deberá contar con medidas de seguridad física y control de acceso físico.
+3.17. El adjudicatario deberá garantizar una disponibilidad del servicio del 99,9 % medida mensualmente.
+
+4. Condiciones administrativas
+4.1. El plazo de ejecución será de 24 meses prorrogable por otros 12 meses.
+4.2. La oferta deberá presentarse por medios electrónicos antes de las 14:00 horas del último día del plazo.

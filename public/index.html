@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<title>compliance-forge</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>compliance-forge</h1>
+    <p class="sub">Compliance work for security pre-sales and delivery. Shred an RFP, check a DORA contract register, plan ENS conformity, model the business case. Runs in this tab, nothing is uploaded.</p>
+  </div>
+  <label>Output language<select id="lang"><option value="en">English</option><option value="es">Español</option></select></label>
+</header>
+<nav id="tabs" role="tablist">
+  <button type="button" role="tab" data-tab="rfp" class="on">RFP shredder</button>
+  <button type="button" role="tab" data-tab="dora">DORA register</button>
+  <button type="button" role="tab" data-tab="ens">ENS planner</button>
+  <button type="button" role="tab" data-tab="roi">ROI lab</button>
+</nav>
+<main>
+  <section id="p-rfp" class="tab">
+    <div class="panel">
+      <div class="row"><h2>Paste the RFP text</h2><button type="button" id="rfp-sample">Load sample</button></div>
+      <textarea id="rfp-text" rows="9" spellcheck="false"></textarea>
+      <h2>What you can already show</h2>
+      <p class="hint">Yes covers the requirement, partial means evidence or scope is incomplete.</p>
+      <div id="caps" class="caps"></div>
+    </div>
+    <div id="rfp-out"></div>
+  </section>
+  <section id="p-dora" class="tab" hidden>
+    <div class="panel">
+      <div class="row"><h2>Paste the contract register (CSV)</h2><button type="button" id="dora-sample">Load sample</button></div>
+      <textarea id="dora-text" rows="9" spellcheck="false"></textarea>
+      <p class="hint">Columns: contract_id, provider_name, provider_lei, critical_function, end_date, subcontractors and the Art. 30 clause columns (yes or no). Header names are matched loosely.</p>
+    </div>
+    <div id="dora-out"></div>
+  </section>
+  <section id="p-ens" class="tab" hidden>
+    <div class="panel">
+      <h2>Security level per dimension</h2>
+      <div class="grid" id="ens-dims"></div>
+      <h2>Maturity per control family</h2>
+      <div class="grid" id="ens-fams"></div>
+    </div>
+    <div id="ens-out"></div>
+  </section>
+  <section id="p-roi" class="tab" hidden>
+    <div class="panel">
+      <div class="row"><h2>Business case model (JSON)</h2><button type="button" id="roi-sample">Load sample</button></div>
+      <textarea id="roi-text" rows="14" spellcheck="false"></textarea>
+      <p class="hint" id="roi-err"></p>
+    </div>
+    <div id="roi-out"></div>
+  </section>
+  <p class="hint">Pre-sales and delivery support, not legal advice. Topic detection is keyword based: review every row.</p>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

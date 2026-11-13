@@ -1,0 +1,44 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm test
+      - name: Sample outputs are up to date
+        run: |
+          node dist/src/cli.js rfp examples/rfp-es.txt --have examples/capabilities.json > /tmp/rfp.md
+          diff /tmp/rfp.md docs/sample-rfp.md
+          node dist/src/cli.js dora examples/contracts.csv --today 2026-11-13 > /tmp/dora.md || test $? -eq 1
+          diff /tmp/dora.md docs/sample-dora.md
+          node dist/src/cli.js ens examples/ens-profile.json --lang es > /tmp/ens.md
+          diff /tmp/ens.md docs/sample-ens.es.md
+          node dist/src/cli.js roi examples/roi-model.json > /tmp/roi.md
+          diff /tmp/roi.md docs/sample-roi.md
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The action passes a profile that meets the threshold
+        uses: ./
+        with:
+          profile: examples/nis2-pass.json
+      - name: The action fails a profile that does not
+        id: gate
+        uses: ./
+        continue-on-error: true
+        with:
+          profile: examples/nis2-fail.json
+      - name: Confirm the failing profile failed
+        run: test "${{ steps.gate.outcome }}" = "failure"

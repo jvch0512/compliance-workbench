@@ -1,0 +1,36 @@
+name: NIS2 readiness gate
+description: Checks a company profile against NIS2 scope and fails the job when too many Article 21(2) measures have no implementation. Runs locally in the job, nothing is uploaded.
+author: jvch0512
+branding:
+  icon: shield
+  color: blue
+inputs:
+  profile:
+    description: Path to the company profile JSON (see examples/nis2-pass.json)
+    required: true
+  max-none:
+    description: Number of Article 21(2) measures allowed to have no implementation before the job fails
+    required: false
+    default: "0"
+  lang:
+    description: Report language, en or es
+    required: false
+    default: en
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    - name: Build compliance-forge
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm install --no-audit --no-fund --silent && npm run build --silent
+    - name: Run the gate
+      shell: bash
+      env:
+        FORGE_PROFILE: ${{ inputs.profile }}
+        FORGE_MAX_NONE: ${{ inputs.max-none }}
+        FORGE_LANG: ${{ inputs.lang }}
+        FORGE_DIR: ${{ github.action_path }}
+      run: node "$FORGE_DIR/dist/src/cli.js" nis2 "$GITHUB_WORKSPACE/$FORGE_PROFILE" --max-none "$FORGE_MAX_NONE" --lang "$FORGE_LANG" --summary

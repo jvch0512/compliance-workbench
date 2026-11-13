@@ -1,0 +1,8 @@
+contract_id,provider_name,provider_lei,country,service_description,critical_function,start_date,end_date,subcontractors,services,dataLocation,dataProtection,dataReturn,sla,incidentSupport,authorityCooperation,termination,awareness,subcontracting,contingency,tlpt,audit,exit
+C-001,Nimbus Cloud,5493001KJTIIGC8Y1R12,IE,Cloud hosting for core banking,yes,2023-07-01,2028-06-30,3,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,yes,no
+C-002,Nimbus Cloud,5493001KJTIIGC8Y1R12,IE,Object storage for archives,no,2024-01-01,2029-12-31,1,yes,yes,yes,yes,yes,yes,yes,yes,yes,,,,,
+C-003,CoreBank Systems,724500ABCDEF12345A96,ES,Core banking platform maintenance,yes,2022-04-01,2027-03-31,0,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,yes
+C-004,PayLink,894500XYZ0Q9R8S7T600,DE,Payment gateway,no,2025-02-01,2027-12-31,0,yes,yes,yes,yes,yes,no,yes,yes,yes,,,,,
+C-005,SecuMon MSSP,959800NUBE000000AB51,ES,Managed detection and response,yes,2024-03-01,2027-01-15,2,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,yes,yes,yes,yes
+C-006,DocuVault,,PT,Document archive,no,2021-10-01,2026-09-30,0,yes,yes,yes,no,yes,yes,yes,yes,yes,,,,,
+C-007,Data Fabrik,529900M1CR0S0FT12335,NL,Analytics platform,yes,2025-06-01,2030-05-31,1,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes

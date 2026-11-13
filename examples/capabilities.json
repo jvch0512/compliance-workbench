@@ -1,0 +1,4 @@
+{
+  "have": ["iso27001", "mfa", "access", "crypto", "backup", "incident", "vuln", "training", "hr", "privacy", "physical", "sla", "policy"],
+  "partial": ["enscert", "bcp", "logging", "supplier", "pentest", "nis2ref"]
+}

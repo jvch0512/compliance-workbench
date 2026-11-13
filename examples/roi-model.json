@@ -1,0 +1,16 @@
+{
+  "currency": "EUR",
+  "years": 3,
+  "iterations": 20000,
+  "seed": 7,
+  "scenarios": [
+    { "name": "Ransomware", "annualRate": 0.12, "lossMin": 250000, "lossMode": 900000, "lossMax": 4000000 },
+    { "name": "Account takeover", "annualRate": 0.6, "lossMin": 10000, "lossMode": 60000, "lossMax": 400000 },
+    { "name": "Data breach", "annualRate": 0.08, "lossMin": 150000, "lossMode": 600000, "lossMax": 3000000 }
+  ],
+  "controls": [
+    { "name": "MFA everywhere", "oneOff": 15000, "annual": 12000, "reduces": { "Account takeover": 0.7, "Ransomware": 0.15 } },
+    { "name": "Immutable backups and restore tests", "oneOff": 30000, "annual": 8000, "reduces": { "Ransomware": 0.5 } },
+    { "name": "Managed detection and response", "oneOff": 10000, "annual": 60000, "reduces": { "Ransomware": 0.35, "Data breach": 0.3, "Account takeover": 0.2 } }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "compliance-forge",
+  "version": "1.0.0",
+  "description": "Compliance work for security pre-sales and delivery: shred an RFP into mapped requirements, check a DORA contract register, plan ENS conformity, model security ROI and gate NIS2 readiness in CI. Zero runtime dependencies, nothing uploaded.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "compliance-forge": "dist/src/cli.js" },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/src/server-main.js",
+    "test": "tsc && node --test dist/test/*.test.js"
+  },
+  "repository": "github:jvch0512/compliance-forge",
+  "keywords": ["rfp", "nis2", "dora", "ens", "iso27001", "compliance", "pre-sales", "roi", "github-action", "typescript"],
+  "devDependencies": { "@types/node": "^22.0.0", "typescript": "^5.6.0" },
+  "engines": { "node": ">=20" }
+}
